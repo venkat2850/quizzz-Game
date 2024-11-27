@@ -1,0 +1,43 @@
+
+
+
+
+
+questions = ("1. Who invented Python first?:",
+                       "2. In which year was Python developed?:",
+                       "3. What is the full form of idle?: ",
+                       "4. If a and b are two matrices. What will be the formula for matrix multiplication using numpy?:",
+                       "5. Recursive logic that is used in factorial is________?:")
+                       
+options = (("A.Dennis M. Ritchie","B.Bjarne Stroustrup","C.Guido van Rossum","D.James Gosling"),
+                   ("A. 1991", "B. 1972 ", "C. 1979", "D. 1989"),
+                   ("A. Integrated DeVops and Learning Environment ", "B. Integrated Development and Learning Environment", "C. A & B", "D. None of above"),
+                   ("A.np.cross(a,b)","B.np.dot(a,b)","C.np.mul(a,b)","D.np.dot(a)"),
+                   ("A. factorial(n)= n * factorial(n-1)", "B. Factorial(n)= n * factorial(n+1)", "C. Factorial(n)= n * factorial(n-2)", "D. Factorial(n)= n * factorial(n+2)"))
+
+answers = ("C", "A", "B", "B", "A")
+guesses = []
+score = 0
+question_num = 0
+
+for question in questions:
+    print("----------------------")
+    print(question)
+    for option in options[question_num]:
+        print(option)
+
+    guess = input("Enter (A, B, C, D): ").upper()
+    guesses.append(guess)
+    if guess == answers[question_num]:
+        score += 1
+        print("CORRECT!")
+    else:
+        print("INCORRECT!")
+        print(f"{answers[question_num]} is the correct answer")
+    question_num += 1
+
+print("----------------------")
+
+score =int(score / len(questions)*5)
+print(f"Your score is: {score}/5")
+print("THANK YOU!")
